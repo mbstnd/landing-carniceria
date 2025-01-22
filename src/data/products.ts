@@ -21,7 +21,7 @@ export const products: Product[] = [
       { name: "Lomo", image: "/img/products/items/vacuno/lomo.jpg" },
       { name: "Costilla", image: "/img/products/items/vacuno/costilla.jpg" },
       { name: "Bife", image: "/img/products/items/vacuno/bife.jpg" },
-      { name: "Asado", image: "/img/products/items/vacuno/asado.jpg" },
+      { name: "Asado Tira", image: "/img/products/asado-tira.webp" },
     ],
   },
   {
