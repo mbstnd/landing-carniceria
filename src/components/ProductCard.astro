@@ -1,0 +1,70 @@
+---
+import type { Product } from "../data/products"
+
+interface Props {
+  title: string
+  description: string
+  image: string
+  items: Array<{ name: string; image: string }>
+  isFeature?: boolean
+}
+
+const { title, description, image, items, isFeature = false } = Astro.props
+---
+
+<article
+  class:list={[
+    "rounded-xl overflow-hidden relative group cursor-pointer",
+    isFeature ? "col-span-2 row-span-2" : "",
+    "bg-gradient-to-b from-transparent to-black/50",
+  ]}
+>
+  <img
+    src={image}
+    alt={title}
+    loading="lazy"
+    class="w-full h-full object-cover absolute inset-0 z-0 transition-transform duration-700 group-hover:scale-110"
+  />
+  <!-- ... resto del código ... -->
+</article>
+
+<style>
+  .product-card {
+    background: white;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .product-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .content {
+    padding: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0;
+  }
+
+  li {
+    padding: 0.25rem 0;
+    color: var(--gray-color);
+  }
+</style>
