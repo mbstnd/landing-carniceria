@@ -1,0 +1,101 @@
+---
+interface Props {
+  title?: string
+  description?: string
+}
+
+const {
+  title = "Carnicería San Martin",
+  description = "Carnicería San Martin - Ofrecemos los cortes más frescos y de calidad, con la distinción de contar con la categoría V Nacional. Garantizamos una experiencia única en cada compra, brindando lo mejor de la carne para ti y tu familia.",
+} = Astro.props
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --primary-color: #d32f2f;
+    --secondary-color: #9a0007;
+    --background-color: #333333;
+    --text-color: #ffffff;
+    --light-color: #ffffff;
+    --gray-color: #666666;
+    --header-height: 70px;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family:
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+
+  section {
+    padding: 4rem 1rem;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  @media (max-width: 768px) {
+    section {
+      padding: 2rem 1rem;
+    }
+  }
+</style>
