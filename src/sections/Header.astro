@@ -23,6 +23,18 @@
   </nav>
 </header>
 
+<script>
+  const header = document.querySelector("header")
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 0) {
+      header?.classList.add("scrolled")
+    } else {
+      header?.classList.remove("scrolled")
+    }
+  })
+</script>
+
 <style>
   header {
     background: var(--background-color);
@@ -33,6 +45,15 @@
     z-index: 999;
     height: var(--header-height);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+
+    transition: all 0.3s ease;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    background: transparent;
+  }
+
+  header.scrolled {
+    background: rgba(17, 24, 39, 0.8);
   }
 
   nav {
