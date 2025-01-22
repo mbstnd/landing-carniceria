@@ -3,7 +3,7 @@
 ---
 
 <header>
-  <nav class="container">
+  <nav class="container mx-auto px-6 flex items-center justify-between h-full">
     <div class="logo">
       <a href="/">
         <img src="/img/logo.png" alt="Logo Carnicería San Martin" />
@@ -53,7 +53,9 @@
   }
 
   header.scrolled {
-    background: rgba(17, 24, 39, 0.8);
+    background: rgba(17, 24, 39, 0.9);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
   }
 
   nav {
