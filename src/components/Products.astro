@@ -1,15 +1,13 @@
 ---
-interface ProductItem {
-  name: string
-  image: string
-}
-
 interface Product {
   id: string
   title: string
   description: string
   image: string
-  items: ProductItem[]
+  items: {
+    name: string
+    image: string
+  }[]
 }
 
 const products: Product[] = [
@@ -19,10 +17,16 @@ const products: Product[] = [
     description: "Los mejores cortes de carne vacuna seleccionados",
     image: "/img/products/vacuno.webp",
     items: [
-      { name: "Lomo", image: "/img/products/items/vacuno/lomo.jpg" },
-      { name: "Costilla", image: "/img/products/items/vacuno/costilla.jpg" },
-      { name: "Bife", image: "/img/products/items/vacuno/bife.jpg" },
-      { name: "Asado", image: "/img/products/items/vacuno/asado.jpg" },
+      {
+        name: "Lomo",
+        image: "/img/products/items/vacuno/lomo-vetado.webp",
+      },
+      { name: "Costilla", image: "/img/products/items/vacuno/coluda.webp" },
+      { name: "Bife", image: "/img/products/items/vacuno/filete.webp" },
+      {
+        name: "Asado",
+        image: "/img/products/items/vacuno/asado-carnicero.webp",
+      },
     ],
   },
   {
@@ -31,10 +35,22 @@ const products: Product[] = [
     description: "Cortes frescos de cerdo de primera calidad",
     image: "/img/products/cerdo.webp",
     items: [
-      { name: "Chuleta", image: "/img/products/items/cerdo/chuleta.jpg" },
-      { name: "Costilla", image: "/img/products/items/cerdo/costilla.jpg" },
-      { name: "Panceta", image: "/img/products/items/cerdo/panceta.jpg" },
-      { name: "Bondiola", image: "/img/products/items/cerdo/bondiola.jpg" },
+      {
+        name: "Chuleta",
+        image: "/img/products/items/cerdo/chuleta-vetada.webp",
+      },
+      {
+        name: "Costilla",
+        image: "/img/products/items/cerdo/costillar-de-cerdo.jpg",
+      },
+      {
+        name: "Panceta",
+        image: "/img/products/items/cerdo/paleta-de-cerdo.webp",
+      },
+      {
+        name: "Bondiola",
+        image: "/img/products/items/cerdo/chuleta-centro.webp",
+      },
     ],
   },
   {
@@ -45,11 +61,14 @@ const products: Product[] = [
     items: [
       {
         name: "Pollo entero",
-        image: "/img/products/items/ave/pollo-entero.jpg",
+        image: "/img/products/items/ave/pechuga-entera.webp",
       },
-      { name: "Pechuga", image: "/img/products/items/ave/pechuga.jpg" },
-      { name: "Pata y muslo", image: "/img/products/items/ave/pata-muslo.jpg" },
-      { name: "Alitas", image: "/img/products/items/ave/alitas.jpg" },
+      { name: "Pechuga", image: "/img/products/items/ave/pechuga-entera.webp" },
+      {
+        name: "Pata y muslo",
+        image: "/img/products/items/ave/tutro-entero.webp",
+      },
+      { name: "Alitas", image: "/img/products/items/ave/tutro-ala.webp" },
     ],
   },
   {
@@ -124,6 +143,7 @@ const products: Product[] = [
             <img
               src={image}
               alt={title}
+              loading="lazy"
               class="w-full h-full object-cover absolute inset-0 z-0 transition-transform duration-700 group-hover:scale-110"
             />
 
@@ -137,9 +157,23 @@ const products: Product[] = [
 
               <div class="grid grid-cols-2 gap-2 mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 {items.slice(0, 4).map((item) => (
-                  <span class="text-xs md:text-sm text-white bg-black/30 px-2 py-1 rounded">
-                    {item.name}
-                  </span>
+                  <div class="flex items-center gap-2 bg-black/30 px-2 py-1 rounded">
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      width="32"
+                      height="32"
+                      loading="lazy"
+                      class="w-8 h-8 object-cover rounded"
+                      onError={(e) => {
+                        console.error(`Failed to load image: ${item.image}`)
+                        e.currentTarget.style.display = "none"
+                      }}
+                    />
+                    <span class="text-xs md:text-sm text-white">
+                      {item.name}
+                    </span>
+                  </div>
                 ))}
               </div>
             </div>
