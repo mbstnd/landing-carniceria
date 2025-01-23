@@ -1,0 +1,131 @@
+---
+const locations = [
+  {
+    name: "Strep Center - Raúl Bitrán",
+    address: "Raúl Bitrán 1701, local 1",
+    city: "La Serena, Región de Coquimbo",
+    map: "https://maps.google.com/?q=Raúl+Bitrán+1701,+La+Serena",
+    hours: {
+      weekdays: "Lunes a Viernes: 9:00 AM - 18:00 PM",
+      weekendsAndHolidays: "Domingos y Festivos: 9:30 AM - 15:00 PM",
+    },
+  },
+  {
+    name: "La Florida",
+    address: "Las Parcelas 150",
+    city: "La Serena, Región de Coquimbo",
+    map: "https://maps.google.com/?q=Las+Parcelas+150,+La+Florida",
+    hours: {
+      weekdays: "Lunes a Viernes: 9:00 AM - 18:00 PM",
+      weekendsAndHolidays: "Domingos y Festivos: 9:30 AM - 15:00 PM",
+    },
+  },
+  {
+    name: "18 de Septiembre",
+    address: "Av. 18 de Septiembre 4280",
+    city: "La Serena, Región de Coquimbo",
+    map: "https://maps.google.com/?q=Av+18+de+Septiembre+4280",
+    hours: {
+      weekdays: "Lunes a Viernes: 9:00 AM - 18:00 PM",
+      weekendsAndHolidays: "Domingos y Festivos: 9:30 AM - 15:00 PM",
+    },
+  },
+]
+---
+
+<section id="contacto" class="py-24 bg-background">
+  <div class="container mx-auto px-4">
+    <h2 class="text-4xl font-bold text-center text-white mb-16">
+      Nuestras Sucursales
+    </h2>
+
+    <div class="grid md:grid-cols-3 gap-8 mb-16">
+      {
+        locations.map(({ name, address, city, map, hours }) => (
+          <div class="bg-gray-800/50 p-8 rounded-xl backdrop-blur-md shadow-xl border border-gray-700/30 hover:border-primary/30 hover:bg-gray-700/50 transition-all duration-300 group">
+            <h3 class="text-2xl font-bold text-white mb-8 group-hover:text-primary transition-colors">
+              {name}
+            </h3>
+
+            <div class="space-y-6 mb-8">
+              <div class="flex items-start gap-4">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6 text-primary flex-shrink-0 mt-1 group-hover:scale-110 transition-transform"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                  />
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                </svg>
+                <div>
+                  <p class="text-gray-200 font-medium">{address}</p>
+                  <p class="text-gray-400 text-sm mt-1">{city}</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6 text-primary flex-shrink-0 mt-1 group-hover:scale-110 transition-transform"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                <div class="space-y-2">
+                  <p class="text-gray-200 text-sm font-medium">
+                    {hours.weekdays}
+                  </p>
+                  <p class="text-gray-400 text-sm">
+                    {hours.weekendsAndHolidays}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <a
+              href={map}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="w-full bg-gray-700/50 hover:bg-primary text-white font-medium py-3 px-6 rounded-lg inline-flex items-center justify-center transition-all duration-300 group-hover:shadow-lg"
+            >
+              Ver ubicación
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5 ml-2 transition-transform group-hover:translate-x-1"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"
+                />
+              </svg>
+            </a>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
