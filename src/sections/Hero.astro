@@ -1,0 +1,74 @@
+---
+
+---
+
+<section
+  class="relative h-screen flex items-center justify-center overflow-hidden"
+>
+  {/* Background Image with Side Shadows */}
+  <div class="absolute inset-0 z-0">
+    <img
+      src="/img/home.webp"
+      alt="Carnicería San Martin"
+      class="w-full h-full object-cover"
+    />
+    <div
+      class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/70"
+    >
+    </div>
+  </div>
+
+  {/* Content */}
+  <div class="container mx-auto px-4 relative z-10 text-center">
+    <h1 class="font-bold mb-6 tracking-tight">
+      <span
+        class="text-white block text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl"
+      >
+        Carnicería
+      </span>
+      <span
+        class="gradient-text block text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl mt-2"
+      >
+        San Martin
+      </span>
+    </h1>
+    <p class="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto">
+      Los mejores cortes de carne con la distinción de contar con la categoría V
+      Nacional. Garantizamos una experiencia única en cada compra.
+    </p>
+    <a
+      href="#productos"
+      class="inline-block bg-primary hover:bg-primary/90 text-white font-bold py-3 px-8 rounded-lg transition-colors"
+    >
+      Ver Productos
+    </a>
+  </div>
+</section>
+
+<style>
+  .gradient-text {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(
+      135deg,
+      var(--primary-color) 0%,
+      #ff6b6b 50%,
+      var(--secondary-color) 100%
+    );
+    background-clip: text;
+    animation: gradient 5s ease infinite;
+    background-size: 200% 200%;
+  }
+
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+</style>
