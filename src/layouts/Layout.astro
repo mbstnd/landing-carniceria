@@ -16,12 +16,38 @@ const {
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
     <meta name="description" content={description} />
+    <meta
+      name="keywords"
+      content="carnicería, carne fresca, cortes premium, asado, parrilla, San Martín"
+    />
+    <meta name="author" content="Carnicería San Martín" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
+    <meta property="og:image" content="/img/logo.png" />
+    <meta property="og:url" content="https://carniceriasanmartin.cl" />
+    <meta property="og:site_name" content="Carnicería San Martín" />
     <meta property="og:type" content="website" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta property="og:locale" content="es_ES" />
+    <link rel="canonical" href="https://carniceriasanmartin.cl" />
+    <link rel="icon" type="image/png" href="/img/logo.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@carniceriasanmartin" />
+    <meta name="twitter:creator" content="@carniceriasanmartin" />
+    <meta
+      name="twitter:title"
+      content="Carnicería San Martín - Calidad en Carnes Frescas"
+    />
+    <meta
+      name="twitter:description"
+      content="Encuentra los mejores cortes de carne en Carnicería San Martín. Calidad garantizada para tus asados y comidas."
+    />
+    <meta name="twitter:image" content="/img/logo.png" />
+
     <title>{title}</title>
     <ClientRouter />
   </head>
