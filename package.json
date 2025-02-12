@@ -14,5 +14,13 @@
   "devDependencies": {
     "@astrojs/tailwind": "^5.1.5",
     "tailwindcss": "^3.4.17"
+  },
+  "pnpm":{
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "sharp"
+    ]
+
   }
+  
 }
