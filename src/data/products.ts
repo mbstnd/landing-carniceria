@@ -163,10 +163,6 @@ export const products: Product[] = [
         image: "/img/products/items/cerdo/costillar-entero.jpg",
          price: { value: 7998, currency: 'CLP', unit: 'kg' } 
       },
-      { name: "Pulpa de cerdo",
-        image: "/img/products/items/cerdo/pulpa.jpg",
-        price: { value: 5998, currency: 'CLP', unit: 'kg' } 
-      },
       { name: "Pulpa sin hueso",
         image: "/img/products/items/cerdo/pulpa-deshuesada.jpg",
         price: { value: 6998, currency: 'CLP', unit: 'kg' } 
