@@ -258,17 +258,12 @@ export const products: Product[] = [
     items: [
       { name: "Osobuco",
         image: "/img/products/items/vacuno/osobuco.jpg",
-        price: { value: 19498, currency: 'CLP', unit: 'unidad' }
+        price: { value: 10498, currency: 'CLP', unit: 'unidad' }
       },
       {
         name: "Aletilla",
         image: "/img/products/items/huesos/aletilla.webp",
         price: { value: 6998, currency: 'CLP', unit: 'kg' }
-      },
-      {
-        name: "Asado Carnicero",
-        image: "/img/products/items/vacuno/asado-carnicero.jpg",
-        price: { value: 10998, currency: 'CLP', unit: 'kg' }
       },
       { 
         name: "Asado Tira",
