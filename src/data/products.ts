@@ -258,7 +258,7 @@ export const products: Product[] = [
     items: [
       { name: "Osobuco",
         image: "/img/products/items/vacuno/osobuco.jpg",
-        price: { value: 10498, currency: 'CLP', unit: 'unidad' }
+        price: { value: 10498, currency: 'CLP', unit: 'kg' }
       },
       {
         name: "Aletilla",
